@@ -1,10 +1,10 @@
 /*
-Theme: RENO
-Author: CSSLoss.com
-Author URI: http://www.cssloss.com/
-Version: 1.0
-=============================================
-*/
+ Theme: RENO
+ Author: CSSLoss.com
+ Author URI: http://www.cssloss.com/
+ Version: 1.0
+ =============================================
+ */
 
 (function($) {
     "use strict";
@@ -52,7 +52,7 @@ Version: 1.0
 
 
         /** Background Image
-        ----------------------------*/
+         ----------------------------*/
         $(".bg-image").each(function() {
             var $imgPath = $(this).attr('data-image');
             $(this).css('background-image', 'url(' + $imgPath + ')');
@@ -65,7 +65,7 @@ Version: 1.0
         /** Portfolio Isotope */
         $(".gallery").isotope({
             itemSelector: '.gallery-item',
-                percentPosition: true,
+            percentPosition: true,
         });
 
         // isotope click function
@@ -174,15 +174,16 @@ Version: 1.0
             };
 
             if (isValidEmail(email) && (message.length > 1) && (name.length > 1)) {
-                $.ajax({
-                    type: 'POST',
-                    url: 'php/contact.php',
-                    data: dataString,
-                    success: function() {
-                        $(".success").fadeIn(1000);
-                        $(".error").fadeOut(500);
-                    }
-                });
+                //$.ajax({
+                //    type: 'POST',
+                //    url: 'php/contact.php',
+                //    data: dataString,
+                //    success: function() {
+                //        $(".success").fadeIn(1000);
+                //        $(".error").fadeOut(500);
+                //    }
+                //});
+                document.location.href = "mailto:xiao_eric@hotmail.com?subject="+subject+"&body="+message+"%0A %0A"+name+"%0A"+email;
             } else {
                 $(".error").fadeIn(1000);
                 $(".success").fadeOut(500);
